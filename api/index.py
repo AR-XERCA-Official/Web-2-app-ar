@@ -19,7 +19,10 @@ app.add_middleware(
 )
 
 # ضبط مسار مجلد templates عشان يشتغل صح على Vercel
+# 1. رجوع خطوتين فقط للوصول للمجلد الرئيسي للمشروع
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# 2. تحديد مسار templates الصحيح
 templates = Jinja2Templates(directory=os.path.join(BASE_DIR, "templates"))
 
 # قاعدة بيانات مؤقتة في الذاكرة لتطبيقاتك
